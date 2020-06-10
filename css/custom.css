@@ -1,0 +1,9 @@
+/* Importing Font */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+/* Global properties */
+*{
+  font-family: 'Montserrat', 'Roboto' sans-serif;
+  background-color: #343A40;
+}
