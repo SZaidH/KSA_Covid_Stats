@@ -43,7 +43,7 @@ body{
 
 /* Statistics*/
 .stats{
-  margin: 70px auto auto auto;
+  margin: 50px auto auto auto;
 }
 
 .stats .row{
@@ -82,5 +82,44 @@ body{
 .stats .num-under{
   color: #939BA2;
   font-size: 3rem;
+}
+
+/* Updates */
+.updates{
+  margin: 50px auto auto auto;
+}
+
+.updates .update-border{
+  border-right:3px solid #E0E0E3 ;
+}
+
+.updates p{
+  color: #E0E0E3;
+  font-size: 4rem;
+}
+
+.updates .update-time{
+  color: #939BA2;
+  font-size: 1.8rem;
+}
+
+.updates .message{
+  color: #E0E0E3;
+  font-size: 3rem;
+  text-align: justify;
+  text-justify: inter-word;
+  margin: auto 15px auto 15px;
+}
+
+.updates b{
+  color: #17A2B8;
+}
+
+/* Footer */
+.footer{
+  background-color: #212529;
+  color: #6C757D;
+  font-size: 1.5rem;
+  margin: 55px auto auto auto;
 }
 
