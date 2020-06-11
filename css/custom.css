@@ -1,9 +1,86 @@
 /* Importing Font */
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 /* Global properties */
 *{
-  font-family: 'Montserrat', 'Roboto' sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html{
+  font-size: 62.5%; /* 10px */ 
+}
+
+body{
   background-color: #343A40;
 }
+
+/* Introductory section */
+.intro{
+  text-align: center;
+  margin: 15px auto auto auto;
+}
+
+.intro h2{
+  color: #FFFFFF;
+  font-size: 6rem;
+  font-weight: Medium;
+}
+
+.intro .lead{
+  color: #939BA2;
+  font-size: 3rem;
+}
+
+.intro p{
+  color: #AFB5BA;
+  font-size: 3rem;
+}
+
+.intro p span{
+  color: #17A2B8;
+  font-size: 4rem;
+}
+
+/* Statistics*/
+.stats{
+  margin: 70px auto auto auto;
+}
+
+.stats .row{
+  line-height: 1;
+}
+
+.stats .margin{
+  margin-bottom: 35px;
+}
+
+.stats p{
+  color: #FFFFFF;
+  font-size: 3.5rem;
+}
+
+.stats .num-cases{
+  color: #FFC107;
+  font-size: 7rem;
+}
+
+.stats .num-deaths{
+  color: #DC3545;
+  font-size: 7rem;
+}
+
+.stats .num-recoveries{
+  color: #028A74;
+  font-size: 7rem;
+}
+
+.stats .num-new{
+  color: #17A2B8;
+  font-size: 7rem;
+}
+
+.stats .num-under{
+  color: #939BA2;
+  font-size: 3rem;
+}
+
