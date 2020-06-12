@@ -17,28 +17,28 @@ body{
 /* Introductory section */
 .intro{
   text-align: center;
-  margin: 15px auto auto auto;
+  margin: 40px auto auto auto;
 }
 
 .intro h2{
   color: #FFFFFF;
-  font-size: 6rem;
+  font-size: 4.5rem;
   font-weight: Medium;
 }
 
 .intro .lead{
   color: #939BA2;
-  font-size: 3rem;
+  font-size: 1.8rem;
 }
 
 .intro p{
   color: #AFB5BA;
-  font-size: 3rem;
+  font-size: 1.8rem;
 }
 
 .intro p span{
   color: #17A2B8;
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 /* Statistics*/
@@ -56,32 +56,32 @@ body{
 
 .stats p{
   color: #FFFFFF;
-  font-size: 3.5rem;
+  font-size: 2rem;
 }
 
 .stats .num-cases{
   color: #FFC107;
-  font-size: 7rem;
+  font-size: 5rem;
 }
 
 .stats .num-deaths{
   color: #DC3545;
-  font-size: 7rem;
+  font-size: 5rem;
 }
 
 .stats .num-recoveries{
   color: #028A74;
-  font-size: 7rem;
+  font-size: 5rem;
 }
 
-.stats .num-new{
-  color: #17A2B8;
-  font-size: 7rem;
+.stats .num-critical{
+  color: #3788DE;
+  font-size: 5rem;
 }
 
 .stats .num-under{
   color: #939BA2;
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 
 /* Updates */
@@ -95,7 +95,7 @@ body{
 
 .updates p{
   color: #E0E0E3;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .updates .update-time{
@@ -115,11 +115,24 @@ body{
   color: #17A2B8;
 }
 
+/* Visual Statistics*/
+
 /* Footer */
 .footer{
   background-color: #212529;
   color: #6C757D;
   font-size: 1.5rem;
   margin: 55px auto auto auto;
+}
+/*********************************/
+
+/* Media Queries */
+/* For mobile devices */
+@media (max-width: 576px){
+  .updates .update-border{
+    border-right: 0;
+    border-bottom: 3px solid #E0E0E3;
+    margin: auto 15px auto 15px;
+  }
 }
 
