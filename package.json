@@ -1,0 +1,23 @@
+{
+  "name": "ksa_covid_stats",
+  "version": "1.0.0",
+  "description": "A web application for displaying Covid-19 related statistics in Saudi Arabia",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Web",
+    "Application",
+    "Statistics",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "API"
+  ],
+  "author": "Zaid Hasan",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -132,7 +132,7 @@ body{
   .updates .update-border{
     border-right: 0;
     border-bottom: 3px solid #E0E0E3;
-    margin: auto 15px auto 15px;
+    margin: auto 15px 20px 15px;
   }
 }
 
