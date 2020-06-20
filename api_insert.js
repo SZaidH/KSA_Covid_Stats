@@ -9,7 +9,7 @@ const MONGO_URL = process.env.MONGO_URL;
 //API URL
 const API_URL = process.env.API_URL;
 
-//Inseting API Data
+//Inserting API Data
 async function insertData() {
   const response = await fetch(API_URL);
   const api_data = await response.json();
@@ -56,4 +56,5 @@ async function insertData() {
   });
 };
 
+//Exporting the module
 module.exports = insertData;

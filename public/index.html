@@ -13,17 +13,20 @@
   <!-- Custom CSS-->
   <link rel="stylesheet" type="text/css" href="./css/custom.css">
 
+  <!-- Custom Script -->
+  <script src="./js/displayData.js">
+  </script>
+
   <!-- Title -->
   <title>KSA Covid Stats</title>
 </head>
 
 <body>
-
   <!-- Introductory Section Start -->
   <div class="container intro">
     <h2>Saudi Arabia COVID-19 Statistics</h2>
-    <p class="lead">Updated: 01-06-2020</p>
-    <p>POPULATION <span>34,775,495</span></p>
+    <p class="lead">Updated: <b id="date"></b></p>
+    <p>POPULATION <span id="population"></span></p>
   </div>
   <!-- Introductory Section End -->
 
@@ -32,26 +35,26 @@
     <div class="row text-center">
       <div class="col-xs-12 col-sm-6 col-md-3 margin">
         <p>CASES</p>
-        <p class="num-cases">101,914</p>
-        <p class="num-under">30,000 TESTS</p>
+        <p class="num-cases" id="totalCases"></p>
+        <p class="num-under" id="activeCases"></p>
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-3 margin">
         <p>DEATHS</p>
-        <p class="num-deaths">712</p>
-        <p class="num-under">0.7% FATALITY RATE</p>
+        <p class="num-deaths" id="totalDeaths"></p>
+        <p class="num-under" id="fatalityRate"></p>
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-3 margin">
         <p>RECOVERED</p>
-        <p class="num-recoveries">72,817</p>
-        <p class="num-under">70% RECOVERY RATE</p>
+        <p class="num-recoveries" id="totalRecoveries"></p>
+        <p class="num-under" id="recoveryRate"></p>
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-3 margin">
         <p>CRITICAL</p>
-        <p class="num-critical">101,914</p>
-        <p class="num-under">TOTAL</p>
+        <p class="num-critical" id="critical"></p>
+        <p class="num-under" id="tests"></p>
       </div>
     </div>
   </div>
@@ -70,7 +73,8 @@
       </div>
 
       <div class="col-xs-12 col-sm-9 col-md-9">
-        <p class="message">On <b>01-06-2020</b>, there were <b>3045</b> new cases, <b>36</b> deaths, and <b>1026</b>
+        <p class="message">On <b id="date2"></b>, there were <b id="cases"></b> new cases, <b id="deaths"></b>
+          deaths, and <b id="recoveries"></b>
           recoveries.
         </p>
       </div>
@@ -97,6 +101,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
+
 </body>
 
 </html>
