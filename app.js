@@ -20,6 +20,12 @@ const COLLECTION_NAME = process.env.COLLECTION_NAME;
 //Serving static files
 app.use(express.static("public"));
 
+//Executing DB insertion at regular intervals
+let timer = setTimeout(function executeFunc() {
+  api_insert();
+  timer = setTimeout(executeFunc, 86400000);
+}, 86400000);
+
 //GET response
 app.get('/api', async (req, res) => {
   //Asynchronous function to fetch document from DB and sending it as a response

@@ -50,7 +50,7 @@ async function insertData() {
     const COLLECTION_NAME = process.env.COLLECTION_NAME;
     dbo.collection(COLLECTION_NAME).insertOne(statsObj, (err, res) => {
       if (err) throw err;
-      console.log("1 document inserted");
+      console.log("DB: 1 document inserted");
       db.close();
     });
   });
