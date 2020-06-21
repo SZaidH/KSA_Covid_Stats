@@ -13,9 +13,9 @@
   <!-- Custom CSS-->
   <link rel="stylesheet" type="text/css" href="./css/custom.css">
 
-  <!-- Custom Script -->
-  <script src="./js/displayData.js">
-  </script>
+  <!-- Custom Scripts -->
+  <script src="./js/displayData.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
   <!-- Title -->
   <title>KSA Covid Stats</title>
@@ -60,8 +60,13 @@
   </div>
   <!-- Statistics End -->
 
-  <!-- Visual Statistics Start (Boilerplate image for now. To be replaced with Chart.js)-->
-  <img src="./img/barchart.png" class="img-fluid mx-auto d-block" alt="Responsive image">
+  <!-- Visual Statistics Start (Using Chart.js) -->
+  <div class="container">
+    <canvas id="myChart">
+      <script src="./js/displayChart.js"></script>
+    </canvas>
+  </div>
+
   <!-- Visual Statistics End-->
 
   <!-- Daily Updates Start -->

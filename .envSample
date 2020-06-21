@@ -1,0 +1,5 @@
+PORT= "Server Port Number"
+MONGO_URL= "MongoDB Connection String"
+API_URL= "External API URL"
+DB_NAME= "Database Name"
+COLLECTION_NAME= "Database Collection Name"

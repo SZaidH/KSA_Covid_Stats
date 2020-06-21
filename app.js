@@ -14,6 +14,7 @@ app.use(express.static('public'));
 //MongoDB Info
 const MONGO_URL = process.env.MONGO_URL;
 const client = new MongoClient(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+const client2 = new MongoClient(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 const DB_NAME = process.env.DB_NAME;
 const COLLECTION_NAME = process.env.COLLECTION_NAME;
 
@@ -26,19 +27,19 @@ let timer = setTimeout(function executeFunc() {
   timer = setTimeout(executeFunc, 86400000);
 }, 86400000);
 
-//GET response
+//GET response - Send API Data
 app.get('/api', async (req, res) => {
   //Asynchronous function to fetch document from DB and sending it as a response
   async function findData() {
     try {
       await client.connect();
-      console.log("Server: Connected to the Database!");
+      console.log("Server: Connected to the Database! (GET RESPONSE - findData)");
       const db = client.db(DB_NAME);
       const col = db.collection(COLLECTION_NAME);
       const stats_sort = { updated: -1 };
       const docs = await col.find().sort(stats_sort).limit(1).toArray();
       await res.json(docs);
-      console.log(`Server: Document successfully sent!`);
+      console.log(`Server: API Document successfully sent!`);
     } catch (err) {
       res.end;
       console.log(err.stack);
@@ -47,4 +48,23 @@ app.get('/api', async (req, res) => {
   findData();
 });
 
-
+//GET response - Send data for Chart.JS
+app.get('/chart', async (req, res) => {
+  //Asynchronous function to fetch document from DB and sending it as a response
+  async function chartData() {
+    try {
+      await client2.connect();
+      console.log("Server: Connected to the Database! (GET RESPONSE - chartData)");
+      const db = client2.db(DB_NAME);
+      const col = db.collection(COLLECTION_NAME);
+      const stats_sort = { updated: 1 };
+      const docs = await col.find({}).project({ updated: 1, todayCases: 1, todayDeaths: 1, todayRecovered: 1 }).sort(stats_sort).toArray();
+      await res.json(docs);
+      console.log(`Server: Chart Documents successfully sent!`);
+    } catch (err) {
+      res.end;
+      console.log(err.stack);
+    }
+  }
+  chartData();
+});
