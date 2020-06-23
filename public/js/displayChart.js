@@ -31,32 +31,62 @@ async function getChartData() {
 async function drawChart() {
   let ctx = document.getElementById('myChart');
   await getChartData();
+  Chart.defaults.global.defaultFontColor = '#FFFFFF';
+  Chart.defaults.global.defaultFontFamily = 'Montserrat';
   let myChart = new Chart(ctx, {
     type: 'line',
     data: {
       labels: xlabels,
       datasets: [{
         data: cases,
-        label: "# of Cases",
+        label: "# of new Cases",
         borderColor: "#FFC107",
-        fill: true
+        borderWidth: 6,
+        fill: true,
+        pointHitRadius: 20
       }, {
         data: deaths,
-        label: "# of Deaths",
+        label: "# of new Deaths",
         borderColor: "#DC3545",
-        fill: true
+        borderWidth: 6,
+        fill: true,
+        pointHitRadius: 20
       }, {
         data: recoveries,
-        label: "# of Recoveries",
+        label: "# of new Recoveries",
         borderColor: "#028A74",
-        fill: true
+        borderWidth: 6,
+        fill: true,
+        pointHitRadius: 20
       }
       ]
     },
     options: {
+      maintainAspectRatio: false,
       title: {
         display: true,
-        text: 'Visual Statistics'
+        text: 'Visual Statistics',
+        fontSize: 30,
+        fontStyle: 'Normal'
+      },
+      legend: {
+        labels: {
+          fontSize: 15
+        }
+      },
+      scales: {
+        xAxes: [{
+          ticks: {
+            fontSize: 15,
+            fontStyle: 'Normal'
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            fontSize: 15,
+            fontStyle: 'Normal'
+          }
+        }]
       }
     }
   });

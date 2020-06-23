@@ -4,8 +4,9 @@
   "description": "A web application for displaying Covid-19 related statistics in Saudi Arabia",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-start": "nodemon app.js"
   },
   "keywords": [
     "Web",
