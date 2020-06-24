@@ -111,11 +111,11 @@ body{
   margin: auto 15px auto 15px;
 }
 
-.updates b{
-  color: #17A2B8;
-}
+#cases{color: #FFC107;}
 
-/* Visual Statistics*/
+#deaths{color: #DC3545;}
+
+#recoveries{color: #028A74;}
 
 /* Footer */
 .footer{
