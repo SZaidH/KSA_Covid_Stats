@@ -11,7 +11,13 @@ async function getChartData() {
 
   //Assigning the values obtained to variables
   xlabels = data.map(function (data) {
-    return data.updated.split('T')[0];
+    //Changing the date format
+    let date = new Date(data.updated);
+    let dd = String(date.getDate()).padStart(2, '0');
+    let mm = String(date.getMonth() + 1).padStart(2, '0');
+    let yy = date.getFullYear().toString().substr(-2);
+    date = dd + '/' + mm + '/' + yy;
+    return date;
   });
 
   cases = data.map(function (data) {
@@ -41,21 +47,21 @@ async function drawChart() {
         data: cases,
         label: "# of new Cases",
         borderColor: "#FFC107",
-        borderWidth: 6,
+        borderWidth: 4,
         fill: true,
         pointHitRadius: 20
       }, {
         data: deaths,
         label: "# of new Deaths",
         borderColor: "#DC3545",
-        borderWidth: 6,
+        borderWidth: 4,
         fill: true,
         pointHitRadius: 20
       }, {
         data: recoveries,
         label: "# of new Recoveries",
         borderColor: "#028A74",
-        borderWidth: 6,
+        borderWidth: 4,
         fill: true,
         pointHitRadius: 20
       }

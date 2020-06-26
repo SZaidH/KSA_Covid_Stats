@@ -84,6 +84,13 @@ body{
   font-size: 1.5rem;
 }
 
+/* Visual Statistics */
+.chart{
+  position: relative;
+  height: 50vh;
+  width: 90vw;
+}
+
 /* Updates */
 .updates{
   margin: 50px auto auto auto;
@@ -100,7 +107,7 @@ body{
 
 .updates .update-time{
   color: #939BA2;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 .updates .message{
@@ -110,6 +117,7 @@ body{
   text-justify: inter-word;
   margin: auto 15px auto 15px;
 }
+#date2{color: #17A2B8;}
 
 #cases{color: #FFC107;}
 
@@ -122,7 +130,7 @@ body{
   background-color: #212529;
   color: #6C757D;
   font-size: 1.5rem;
-  margin: 55px auto auto auto;
+  margin: 20px auto auto auto;
 }
 /*********************************/
 
@@ -131,8 +139,33 @@ body{
 @media (max-width: 576px){
   .updates .update-border{
     border-right: 0;
-    border-bottom: 3px solid #E0E0E3;
+    border-bottom: 2px solid #E0E0E3;
     margin: auto 15px 20px 15px;
+  }
+
+  .updates .message{
+    font-size: 2rem;
+    margin: auto 15px auto 15px;
+  }
+
+  .updates p{
+    font-size: 2.5rem;
+  }
+  
+  .updates .update-time{
+    color: #939BA2;
+    font-size: 1.5rem;
+  }
+
+  .footer{
+    font-size: 1rem;
   }
 }
 
+/* Chart.js Mobile adjustments (Landscape mode) */
+@media screen and (min-width: 568px) and (max-width: 1281px) and (orientation: landscape){
+  .chart{
+      height: 90vh;
+      width: 90vw;
+  }
+}

@@ -15,15 +15,16 @@ async function getData() {
   const critical = data[0].critical;
   const tests = data[0].tests;
   const population = data[0].population;
+  const updated = data[0].updated;
 
   //Date today
-  let today = new Date();
+  let today = new Date(updated);
   let dd = String(today.getDate()).padStart(2, '0');
   let mm = String(today.getMonth() + 1).padStart(2, '0');
   let yyyy = today.getFullYear();
   today = dd + '-' + mm + '-' + yyyy;
 
-  //Assigning the Data to elements
+  //Assigning the Data to HTML elements
   document.getElementById('population').textContent = population.toLocaleString();
   document.getElementById('totalCases').textContent = cases.toLocaleString();
   document.getElementById('tests').textContent = tests.toLocaleString() + ` TESTS`;
@@ -40,5 +41,5 @@ async function getData() {
   document.getElementById('date2').textContent = today;
 }
 
-//Executing the Server
+//Executing the function
 getData();
