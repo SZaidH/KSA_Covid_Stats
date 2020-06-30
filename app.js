@@ -23,10 +23,12 @@ const COLLECTION_NAME = process.env.COLLECTION_NAME;
 app.use(express.static("public"));
 
 //Scheduling a cron job for DB insertion
-cron.schedule('5 14 * * *', () => {
+cron.schedule('5 16 * * *', () => {
   api_insert();
+  console.log('Server: Cron Job (DB Insertion) executed!');
+}, {
+  timezone: "Asia/Riyadh"
 });
-
 
 //GET response - Send API Data
 app.get('/api', async (req, res) => {
