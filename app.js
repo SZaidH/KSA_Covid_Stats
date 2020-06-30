@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
+const cron = require('node-cron');
 const api_insert = require('./api_insert');
 require('dotenv').config();
 
@@ -21,11 +22,11 @@ const COLLECTION_NAME = process.env.COLLECTION_NAME;
 //Serving static files
 app.use(express.static("public"));
 
-//Executing DB insertion at regular intervals
-let timer = setTimeout(function executeFunc() {
+//Scheduling a cron job for DB insertion
+cron.schedule('5 14 * * *', () => {
   api_insert();
-  timer = setTimeout(executeFunc, 86400000);
-}, 86400000);
+});
+
 
 //GET response - Send API Data
 app.get('/api', async (req, res) => {
