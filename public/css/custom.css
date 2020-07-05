@@ -70,7 +70,7 @@ body{
 }
 
 .stats .num-recoveries{
-  color: #028A74;
+  color: #28a745;
   font-size: 5rem;
 }
 
@@ -79,10 +79,11 @@ body{
   font-size: 5rem;
 }
 
-.stats .num-under{
-  color: #939BA2;
-  font-size: 1.5rem;
-}
+.num-under{font-size: 1.5rem;}
+#activeCases{color: #FFC107;}
+#fatalityRate{color: #DC3545;}
+#recoveryRate{color: #28a745;}
+#tests{color: #3788DE;}
 
 /* Visual Statistics */
 .chart{
@@ -123,7 +124,7 @@ body{
 
 #deaths{color: #DC3545;}
 
-#recoveries{color: #028A74;}
+#recoveries{color: #28a745;}
 
 /* Footer */
 .footer{

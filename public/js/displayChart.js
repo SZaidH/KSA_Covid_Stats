@@ -45,22 +45,22 @@ async function drawChart() {
       labels: xlabels,
       datasets: [{
         data: cases,
-        label: "# of new Cases",
+        label: "New Cases",
         borderColor: "#FFC107",
         borderWidth: 4,
         fill: true,
         pointHitRadius: 20
       }, {
         data: deaths,
-        label: "# of new Deaths",
+        label: "New Deaths",
         borderColor: "#DC3545",
         borderWidth: 4,
         fill: true,
         pointHitRadius: 20
       }, {
         data: recoveries,
-        label: "# of new Recoveries",
-        borderColor: "#028A74",
+        label: "New Recoveries",
+        borderColor: "#28a745",
         borderWidth: 4,
         fill: true,
         pointHitRadius: 20
@@ -71,8 +71,8 @@ async function drawChart() {
       maintainAspectRatio: false,
       title: {
         display: true,
-        text: 'Visual Statistics',
-        fontSize: 30,
+        text: ['DAILY STATS OVER TIME', '(Toggle the Legend below to enable/disable statistics)'],
+        fontSize: 20,
         fontStyle: 'Normal'
       },
       legend: {
