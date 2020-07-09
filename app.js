@@ -23,7 +23,7 @@ const COLLECTION_NAME = process.env.COLLECTION_NAME;
 app.use(express.static("public"));
 
 //Scheduling a cron job for DB insertion
-cron.schedule('10 16 * * *', () => {
+cron.schedule('15 16 * * *', () => {
   api_insert();
   console.log('Server: Cron Job (DB Insertion) executed!');
 }, {
