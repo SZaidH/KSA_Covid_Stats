@@ -47,21 +47,21 @@ async function drawChart() {
         data: cases,
         label: "New Cases",
         borderColor: "#FFC107",
-        borderWidth: 4,
+        borderWidth: 3,
         fill: true,
         pointHitRadius: 20
       }, {
         data: deaths,
         label: "New Deaths",
         borderColor: "#DC3545",
-        borderWidth: 4,
+        borderWidth: 3,
         fill: true,
         pointHitRadius: 20
       }, {
         data: recoveries,
         label: "New Recoveries",
         borderColor: "#28a745",
-        borderWidth: 4,
+        borderWidth: 3,
         fill: true,
         pointHitRadius: 20
       }
@@ -84,7 +84,9 @@ async function drawChart() {
         xAxes: [{
           ticks: {
             fontSize: 15,
-            fontStyle: 'Normal'
+            fontStyle: 'Normal',
+            autoSkip: true,
+            maxTicksLimit: 15
           }
         }],
         yAxes: [{
@@ -98,4 +100,3 @@ async function drawChart() {
   });
 };
 drawChart();
-

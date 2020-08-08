@@ -9,6 +9,23 @@ const MONGO_URL = process.env.MONGO_URL;
 //API URL
 const API_URL = process.env.API_URL;
 
+//Check API
+async function checkApi() {
+  const response = await fetch(API_URL);
+  const api_data = await response.json();
+
+  //if the API call returns the desired values, execute insertData() 
+  if (api_data.todayCases !== 0) {
+    insertData();
+  }
+  else {
+    console.log("Server: Desired API data not found. Will retry after 15 minutes");
+    setTimeout(function () {
+      checkApi();
+    }, 900000);
+  }
+}
+
 //Inserting API Data
 async function insertData() {
   const response = await fetch(API_URL);
@@ -56,5 +73,8 @@ async function insertData() {
   });
 };
 
-//Exporting the module
-module.exports = insertData;
+//Exporting the modules
+module.exports = {
+  checkApi,
+  insertData
+};
