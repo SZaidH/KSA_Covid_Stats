@@ -60,8 +60,7 @@ app.get('/chart', async (req, res) => {
       console.log("Server: Connected to the Database! (GET RESPONSE - chartData)");
       const db = client2.db(DB_NAME);
       const col = db.collection(COLLECTION_NAME);
-      const stats_sort = { updated: 1 };
-      const docs = await col.find({}).project({ updated: 1, todayCases: 1, todayDeaths: 1, todayRecovered: 1 }).sort(stats_sort).toArray();
+      const docs = await col.find({}).project({ updated: 1, todayCases: 1, todayDeaths: 1, todayRecovered: 1 }).sort({ $natural: -1 }).limit(90).toArray();
       await res.json(docs);
       console.log(`Server: Chart Documents successfully sent!`);
     } catch (err) {

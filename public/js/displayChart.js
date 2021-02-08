@@ -9,6 +9,9 @@ async function getChartData() {
   const data = await response.json();
   console.log('Chart Data Received!');
 
+  //Reversing the JSON Array
+  await data.reverse();
+
   //Assigning the values obtained to variables
   xlabels = data.map(function (data) {
     //Changing the date format
@@ -71,7 +74,7 @@ async function drawChart() {
       maintainAspectRatio: false,
       title: {
         display: true,
-        text: ['DAILY STATS OVER TIME', '(Toggle the Legend below to enable/disable statistics)'],
+        text: ['DAILY STATS (Past 90 Days)', '(Toggle the Legend below to enable/disable statistics)'],
         fontSize: 20,
         fontStyle: 'Normal'
       },
