@@ -23,8 +23,9 @@ const COLLECTION_NAME = process.env.COLLECTION_NAME;
 app.use(express.static("public"));
 
 // Scheduling a cron job for DB insertion
-cron.schedule('10 16 * * *', () => {
-  api_insert.checkApi();
+cron.schedule('30 16 * * *', () => {
+  let counter = 0;
+  api_insert.checkApi(counter);
   console.log('Server: Cron Job (API Check) executed!');
 }, {
   timezone: "Asia/Riyadh"

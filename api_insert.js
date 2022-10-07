@@ -10,18 +10,17 @@ const MONGO_URL = process.env.MONGO_URL;
 const API_URL = process.env.API_URL;
 
 //Check API
-async function checkApi() {
+async function checkApi(counter) {
   const response = await fetch(API_URL);
   const api_data = await response.json();
 
-  //if the API call returns the desired values, execute insertData() 
-  if (api_data.todayCases !== 0) {
-    insertData();
-  }
+  //if the API call returns the desired values and the counter value doesn't exceed 2, then execute insertData() 
+  if (api_data.todayCases !== 0 && counter!==2) insertData();
+  else if(counter===2) return console.log("Server: Desired API data not found. Will try again tomorrow"); 
   else {
     console.log("Server: Desired API data not found. Will retry after 15 minutes");
     setTimeout(function () {
-      checkApi();
+      checkApi(counter+1);
     }, 900000);
   }
 }
